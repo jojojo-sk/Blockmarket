@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17251c"><title>BLOCKMARKET – Admin</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body{min-height:100vh}.admin-shell{max-width:1000px;width:92%;margin:42px auto}.admin-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:24px}.admin-header a{color:#4a8f45;text-decoration:none;font-weight:700;font-size:13px}.admin-login-card{max-width:420px;margin:70px auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow)}.admin-login-card label{display:block;font-size:12px;font-weight:700;margin:15px 0 7px}.admin-login-card input{width:100%;border:1px solid var(--line);border-radius:8px;padding:12px}.admin-login-card .primary{width:100%;margin-top:16px;padding:12px}.admin-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.admin-tools .spacer{flex:1}.admin-order{background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px;margin:12px 0}.admin-order-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.admin-order h3{font-size:15px;margin:0}.admin-order p{font-size:13px;color:#657268;line-height:1.6}.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-actions button{border:0;border-radius:8px;padding:9px 12px;font-size:12px;font-weight:700}.error{color:#b44d45;font-size:12px}.admin-foot{font-size:11px;color:#879287;margin-top:25px}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-icon">▦</span><span>BLOCK<span class="green">MARKET</span><small>ADMINISTRATION</small></span></a>
+    <div style="flex:1"></div><a class="admin-link" href="/">← Zum Käufer-Shop</a>
+  </header>
+  <main class="admin-shell">
+    <section id="login-card" class="admin-login-card">
+      <p class="eyebrow">GESCHÜTZTER BEREICH</p><h1 style="font:700 27px 'Space Grotesk';margin:0">Admin-Anmeldung</h1>
+      <p class="muted">Melde dich an, um Bestellungen zu verwalten.</p>
+      <form id="login-form"><label for="password">Admin-Passwort</label><input id="password" type="password" autocomplete="current-password" required><button class="primary" type="submit">Anmelden</button></form>
+      <p id="login-error" class="error" role="alert"></p>
+    </section>
+    <section id="dashboard" class="hidden">
+      <div class="admin-header"><div><p class="eyebrow">BESTELLVERWALTUNG</p><h1 style="font:700 30px 'Space Grotesk';margin:0">Eingegangene Bestellungen</h1><p class="muted">Neue Bestellungen werden automatisch alle 12 Sekunden geladen.</p></div></div>
+      <div class="admin-tools"><span id="pending-count" class="status pending">0 offen</span><span class="spacer"></span><button id="refresh" class="secondary">↻ Aktualisieren</button><button id="logout" class="secondary">Abmelden</button></div>
+      <div id="orders"><div class="loading">Bestellungen werden geladen …</div></div>
+    </section>
+    <p class="admin-foot">BLOCKMARKET · Manuelle Lieferung · Gib dein Admin-Passwort niemals an Käufer weiter.</p>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/admin.js"></script>
+</body></html>

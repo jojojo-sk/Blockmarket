@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17251c">
+  <title>BLOCKMARKET – Minecraft Java Shop</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">▦</span><span>BLOCK<span class="green">MARKET</span><small>MINECRAFT JAVA SHOP</small></span></a>
+    <div class="search-wrap"><input id="search" type="search" placeholder="Minecraft-Items suchen …" aria-label="Items suchen"><span>⌕</span></div>
+    <button id="cart-open" class="cart-button">🛒 Warenkorb <b id="cart-count">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">DEIN SERVER. DEINE ITEMS.</p><h1>Alles, was deine<br><span>Welt braucht.</span></h1><p>Finde deine Minecraft-Gegenstände, gib die gewünschte Menge ein und sende deine Bestellung ab.</p></div>
+      <div class="hero-cube" aria-hidden="true">▦</div>
+    </section>
+
+    <section class="shop-layout">
+      <aside class="sidebar">
+        <h3>Kategorien</h3>
+        <button class="category active" data-category="Alle">Alle Items <span id="all-count"></span></button>
+        <button class="category" data-category="Blöcke & Materialien">Blöcke & Materialien</button>
+        <button class="category" data-category="Kampf & Werkzeuge">Kampf & Werkzeuge</button>
+        <button class="category" data-category="Rüstung">Rüstung</button>
+        <button class="category" data-category="Nahrung">Nahrung</button>
+        <button class="category" data-category="Redstone">Redstone</button>
+        <button class="category" data-category="Deko & Natur">Deko & Natur</button>
+        <button class="category" data-category="Sonstiges">Sonstiges</button>
+        <div class="sidebar-note"><b>Manuelle Lieferung</b><p>Jede Bestellung wird zuerst von einem Admin geprüft. Die Übergabe erfolgt anschließend direkt im Spiel.</p></div>
+      </aside>
+
+      <section class="catalogue">
+        <div class="section-heading"><div><p class="eyebrow">SHOP</p><h2>Alle Items</h2></div><span id="result-count" class="muted">Lade Items …</span></div>
+        <div id="items" class="item-grid"><div class="loading">Minecraft-Items werden geladen …</div></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="cart-drawer" class="drawer-backdrop hidden">
+    <section class="drawer">
+      <div class="drawer-head"><div><p class="eyebrow">DEINE AUSWAHL</p><h2>Warenkorb</h2></div><button class="icon-button" id="cart-close" aria-label="Schließen">✕</button></div>
+      <div id="cart-lines" class="cart-lines"></div>
+      <div class="checkout">
+        <label for="player">Minecraft-Spielername</label><input id="player" maxlength="16" placeholder="DeinIngameName">
+        <label for="note">Anmerkung (optional)</label><textarea id="note" maxlength="500" placeholder="Zum Beispiel: Ich bin heute ab 18 Uhr online."></textarea>
+        <button id="submit-order" class="primary full">Bestellung absenden</button>
+        <p class="fine-print">Noch keine Zahlung. Deine Bestellung wird erst nach Prüfung angenommen.</p>
+        <div id="checkout-message" role="status"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <footer><span>⛏ BLOCKMARKET</span><span>Fanprojekt für Minecraft Java Edition · Keine Verbindung zu Mojang oder Microsoft</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
